@@ -1,6 +1,6 @@
 # Telecom Landing Page
 
-Features:
+React landing page with dark mode and animations 📡
 
 - Routing
 - Light/dark theme with saving to local storage
@@ -11,17 +11,21 @@ Features:
 
 ![light_theme](images/telecom.gif)
 
-## Build & Run
+## Getting Started
+
+Install Node.js v16 (Gallium):
+
+https://nodejs.org/download/release/latest-gallium/
 
 Install dependencies:
 
-```shell
+```shell script
 npm install
 ```
 
 Run for development:
 
-```shell
+```shell script
 npm run start
 ```
 
