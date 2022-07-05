@@ -1,0 +1,17 @@
+@use '../../styles/variables';
+
+.home {
+  display: grid;
+  grid-auto-flow: row;
+  grid-row-gap: 50px;
+
+  &__title {
+    font-size: variables.$title-medium;
+  }
+
+  &--dark {
+    .home__title {
+      color: white;
+    }
+  }
+}

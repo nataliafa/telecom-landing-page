@@ -1,0 +1,20 @@
+@use './styles/variables';
+
+.App {
+  max-width: variables.$width-large;
+  padding: 50px 80px;
+  margin: 0 auto;
+
+  @media screen and (max-width: variables.$width-medium) {
+    padding: 50px 2%;
+  }
+}
+
+body {
+  background-color: #f8f8f8;
+  transition: 0.2s all ease-in;
+
+  &.dark {
+    background-color: #171717;
+  }
+}

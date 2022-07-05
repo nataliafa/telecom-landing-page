@@ -1,0 +1,13 @@
+@use '../../styles/variables';
+
+.numbers {
+  &__title {
+    font-size: variables.$title-medium;
+  }
+
+  &--dark {
+    .numbers__title {
+      color: white;
+    }
+  }
+}

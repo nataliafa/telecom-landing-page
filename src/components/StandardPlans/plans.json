@@ -1,0 +1,96 @@
+[
+  {
+    "id": 0,
+    "name": "Basic",
+    "template": "basic",
+    "packs": [
+      {
+        "dataVolume": 10,
+        "minutes": 300,
+        "sms": 100,
+        "price": 5
+      },
+      {
+        "dataVolume": 15,
+        "minutes": 350,
+        "sms": 150,
+        "price": 7
+      },
+      {
+        "dataVolume": 30,
+        "minutes": 400,
+        "sms": 200,
+        "price": 9
+      },
+      {
+        "dataVolume": 35,
+        "minutes": 450,
+        "sms": 250,
+        "price": 11
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Bright",
+    "template": "bright",
+    "popular": true,
+    "packs": [
+      {
+        "dataVolume": 40,
+        "minutes": 500,
+        "sms": 300,
+        "price": 12
+      },
+      {
+        "dataVolume": 45,
+        "minutes": 550,
+        "sms": 350,
+        "price": 15
+      },
+      {
+        "dataVolume": 50,
+        "minutes": 600,
+        "sms": 400,
+        "price": 17
+      },
+      {
+        "dataVolume": 55,
+        "minutes": 650,
+        "sms": 450,
+        "price": 19
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Extended",
+    "template": "extended",
+    "packs": [
+      {
+        "dataVolume": 60,
+        "minutes": 700,
+        "sms": 500,
+        "price": 20
+      },
+      {
+        "dataVolume": 75,
+        "minutes": 750,
+        "sms": 550,
+        "price": 22
+      },
+      {
+        "dataVolume": 80,
+        "minutes": 800,
+        "sms": 600,
+        "price": 24
+      },
+      {
+        "dataVolume": 85,
+        "minutes": 850,
+        "sms": 650,
+        "price": 26
+      }
+    ]
+  }
+]

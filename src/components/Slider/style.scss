@@ -1,0 +1,48 @@
+@use '../../styles/variables';
+
+.slider {
+  width: 100%;
+
+  &__container {
+    position: relative;
+    height: 812px;
+  }
+
+  &__arrows {
+    position: absolute;
+    bottom: 100px;
+    left: 120px;
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+    height: 44px;
+    z-index: 20;
+
+    &-left,
+    &-right {
+      height: 44px;
+      width: 44px;
+      background-repeat: no-repeat;
+      background-position-y: 50%;
+      border: 1px solid variables.$color-grey;
+      border-radius: 50%;
+    }
+
+    &-left {
+      background-image: url("img/arrow_left.svg");
+      background-position-x: 45%;
+    }
+
+    &-right {
+      background-image: url("img/arrow_right.svg");
+      background-position-x: 55%;
+    }
+
+    &-left:hover,
+    &-right:hover {
+      outline: 0;
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
+}

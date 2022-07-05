@@ -1,0 +1,13 @@
+@use '../../styles/variables';
+
+.plans {
+  &__title {
+    font-size: variables.$title-medium;
+  }
+
+  &--dark {
+    .plans__title {
+      color: white;
+    }
+  }
+}

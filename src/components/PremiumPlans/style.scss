@@ -1,0 +1,56 @@
+@use '../../styles/variables';
+
+.premium-plans {
+  border-radius: variables.$border-radius;
+  background-color: white;
+  padding: 60px;
+
+  @media screen and (max-width: variables.$width-s-medium) {
+    padding: 2%;
+  }
+
+  &__plans {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 60px;
+    margin-bottom: 20px;
+
+    @media screen and (max-width: variables.$width-s-medium) {
+      column-gap: 2%;
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 40px;
+    color: variables.$color-brown;
+    line-height: 46px;
+  }
+
+  &__benefit {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: max-content;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.04);
+  }
+
+  &--dark {
+    background-color: variables.$color-black;
+    border: 1px solid variables.$color-brown;
+
+    .premium-plans__title,
+    .premium-plans__tab,
+    .premium-plans__benefit {
+      color: white;
+    }
+    .premium-plans__benefit {
+      background-color: variables.$color-brown;
+    }
+  }
+}

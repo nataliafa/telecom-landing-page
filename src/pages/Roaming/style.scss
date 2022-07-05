@@ -1,0 +1,13 @@
+@use '../../styles/variables';
+
+.roaming {
+  &__title {
+    font-size: variables.$title-medium;
+  }
+
+  &--dark {
+    .roaming__title {
+      color: white;
+    }
+  }
+}

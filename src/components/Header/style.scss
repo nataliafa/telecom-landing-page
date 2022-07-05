@@ -1,0 +1,35 @@
+@use '../../styles/variables';
+
+.header {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+  align-items: center;
+  margin-bottom: 50px;
+
+  @media screen and (max-width: variables.$width-medium) {
+    grid-template-columns: 3fr 0.5fr 0.5fr;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 46px;
+    width: 250px;
+    margin-left: 30px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: variables.$color-500;
+    transition: background-color 200ms ease-in;
+    text-decoration: none;
+    border-radius: variables.$border-radius;
+    border: none;
+    outline: 0;
+
+    &:hover {
+      background-color: lighten(variables.$color-500, 10%);
+      cursor: pointer;
+    }
+  }
+}

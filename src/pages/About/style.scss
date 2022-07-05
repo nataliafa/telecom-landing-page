@@ -1,0 +1,13 @@
+@use '../../styles/variables';
+
+.about {
+  &__title {
+    font-size: variables.$title-medium;
+  }
+
+  &--dark {
+    .about__title {
+      color: white;
+    }
+  }
+}
