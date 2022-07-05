@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { ThemeContext } from "./ThemeProvider";
 import Header from "./components/Header";
@@ -21,37 +21,21 @@ function App() {
   }, [theme]);
 
   return (
-    <Router>
+    <BrowserRouter>
       <div className="App">
         <Header />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/services">
-            <Services />
-          </Route>
-          <Route path="/plans">
-            <Plans />
-          </Route>
-          <Route path="/numbers">
-            <Numbers />
-          </Route>
-          <Route path="/organizations">
-            <Organizations />
-          </Route>
-          <Route exact path="/roaming">
-            <Roaming />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/plans" element={<Plans />} />
+          <Route path="/numbers" element={<Numbers />} />
+          <Route path="/organizations" element={<Organizations />} />
+          <Route exact path="/roaming" element={<Roaming />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

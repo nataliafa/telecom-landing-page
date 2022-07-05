@@ -16,16 +16,12 @@ const Plan = ({ plan }) => {
   const [with4g, setWith4g] = useState(false);
 
   useEffect(() => {
-    setPackValue(buildPack(packIndex, with4g));
-  }, [packIndex, with4g]);
-
-  const buildPack = (index, include4g) => {
-    const newPack = Object.assign({}, plan.packs[index]);
-    if (include4g) {
+    const newPack = Object.assign({}, plan.packs[packIndex]);
+    if (with4g) {
       newPack.price += 2;
     }
-    return newPack;
-  };
+    setPackValue(newPack);
+  }, [packIndex, with4g, plan.packs]);
 
   const getIcon = () => {
     switch (plan.template) {

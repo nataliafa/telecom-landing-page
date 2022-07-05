@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import "./style.scss";
 
 const Switch = ({ onChange }) => {
   const [checked, setChecked] = useState(false);
 
-  const onCheckboxChange = () => {
+  const onCheckboxChange = useCallback(() => {
     const value = !checked;
     setChecked(value);
     if (onChange) {
       onChange(value);
     }
-  };
+  }, [onChange, checked]);
 
   return (
     <label className="switch">

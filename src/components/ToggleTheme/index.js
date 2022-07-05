@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../../ThemeProvider";
 import "./style.scss";
 
@@ -17,20 +17,20 @@ const ToggleTheme = () => {
     } else {
       localStorage.setItem(LOCAL_STORAGE_KEY, value);
     }
-  }, []);
+  }, [value, onThemeChange]);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, value);
     onThemeChange(value);
-  }, [value]);
+  }, [value, onThemeChange]);
 
-  const onChange = () => {
+  const handleChange = useCallback(() => {
     if (value === VALUE_LIGHT) {
       setValue(VALUE_DARK);
     } else if (value === VALUE_DARK) {
       setValue(VALUE_LIGHT);
     }
-  };
+  }, [value]);
 
   return (
     <div className="toggle-theme">
@@ -38,7 +38,7 @@ const ToggleTheme = () => {
         <input
           className="toggle-theme__input"
           type="checkbox"
-          onChange={onChange}
+          onChange={handleChange}
           checked={value === VALUE_DARK}
         />
         <span className="toggle-theme__toggle" />

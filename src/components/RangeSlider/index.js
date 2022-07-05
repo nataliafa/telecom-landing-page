@@ -1,28 +1,35 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Slider, { Handle } from "rc-slider";
 import "./style.scss";
 import handle from "./img/handle.svg";
 
-const CustomHandle = (props) => {
-  const { value, dragging, index, ...restProps } = props;
+const CustomHandle = ({ value, dragging, index, ...props }) => {
   return (
-    <Handle value={value} {...restProps}>
+    <Handle value={value} {...props}>
       <img src={handle} alt="Handle" />
     </Handle>
   );
 };
 
 const RangeSlider = ({ steps, defaultValue, onChange }) => {
-  const marks = {};
-  steps.forEach((element) => {
-    marks[element.toString()] = {};
-  });
+  const [marks, setMarks] = useState({});
 
-  const customOnChange = (value) => {
-    if (onChange) {
-      onChange(steps.indexOf(value));
-    }
-  };
+  useEffect(() => {
+    const marks = {};
+    steps.forEach((element) => {
+      marks[element.toString()] = {};
+    });
+    setMarks(marks);
+  }, [steps]);
+
+  const customOnChange = useCallback(
+    (value) => {
+      if (onChange) {
+        onChange(steps.indexOf(value));
+      }
+    },
+    [steps, onChange]
+  );
 
   return (
     <div className="range-slider">
