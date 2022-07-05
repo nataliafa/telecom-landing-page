@@ -1,16 +1,16 @@
-import React, { useCallback, useState } from "react";
-import "./style.scss";
+import React, { useCallback, useState } from "react"
+import "./style.scss"
 
 const Switch = ({ onChange }) => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false)
 
   const onCheckboxChange = useCallback(() => {
-    const value = !checked;
-    setChecked(value);
+    const value = !checked
+    setChecked(value)
     if (onChange) {
-      onChange(value);
+      onChange(value)
     }
-  }, [onChange, checked]);
+  }, [onChange, checked])
 
   return (
     <label className="switch">
@@ -22,7 +22,7 @@ const Switch = ({ onChange }) => {
       />
       <span className="switch__toggle" />
     </label>
-  );
-};
+  )
+}
 
-export default Switch;
+export default Switch

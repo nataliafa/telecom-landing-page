@@ -1,13 +1,13 @@
-import React, { useState, useContext } from "react";
-import Plan from "../Plan";
-import { ThemeContext } from "../../ThemeProvider";
-import classNames from "classnames";
-import "./style.scss";
-import plans from "./plans.json";
+import React, { useState, useContext } from "react"
+import Plan from "../Plan"
+import { ThemeContext } from "../../ThemeProvider"
+import classNames from "classnames"
+import "./style.scss"
+import plans from "./plans.json"
 
 const StandardPlans = () => {
-  const { theme } = useContext(ThemeContext);
-  const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const { theme } = useContext(ThemeContext)
+  const [activeTabIndex, setActiveTabIndex] = useState(0)
 
   return (
     <section className={`standard-plans standard-plans--${theme}`}>
@@ -36,7 +36,7 @@ const StandardPlans = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default StandardPlans;
+export default StandardPlans

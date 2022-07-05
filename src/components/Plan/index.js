@@ -1,44 +1,44 @@
-import React, { useState, useEffect } from "react";
-import RangeSlider from "../RangeSlider";
-import Switch from "../Switch";
-import "./style.scss";
-import duck from "./img/duck.png";
-import star from "./img/star.png";
-import trophy from "./img/trophy.png";
-import infinity from "./img/infinity.svg";
-import information from "./img/information.svg";
-import globe from "./img/globe.svg";
-import beeline from "./img/beeline.png";
+import React, { useState, useEffect } from "react"
+import RangeSlider from "../RangeSlider"
+import Switch from "../Switch"
+import "./style.scss"
+import duck from "./img/duck.png"
+import star from "./img/star.png"
+import trophy from "./img/trophy.png"
+import infinity from "./img/infinity.svg"
+import information from "./img/information.svg"
+import globe from "./img/globe.svg"
+import beeline from "./img/beeline.png"
 
 const Plan = ({ plan }) => {
-  const [packIndex, setPackIndex] = useState(0);
-  const [packValue, setPackValue] = useState(Object.assign({}, plan.packs[0]));
-  const [with4g, setWith4g] = useState(false);
+  const [packIndex, setPackIndex] = useState(0)
+  const [packValue, setPackValue] = useState(Object.assign({}, plan.packs[0]))
+  const [with4g, setWith4g] = useState(false)
 
   useEffect(() => {
-    const newPack = Object.assign({}, plan.packs[packIndex]);
+    const newPack = Object.assign({}, plan.packs[packIndex])
     if (with4g) {
-      newPack.price += 2;
+      newPack.price += 2
     }
-    setPackValue(newPack);
-  }, [packIndex, with4g, plan.packs]);
+    setPackValue(newPack)
+  }, [packIndex, with4g, plan.packs])
 
   const getIcon = () => {
     switch (plan.template) {
       case "basic":
-        return duck;
+        return duck
       case "bright":
-        return star;
+        return star
       case "extended":
-        return trophy;
+        return trophy
       case "premium-bright":
-        return star;
+        return star
       case "premium-extended":
-        return trophy;
+        return trophy
       default:
-        return duck;
+        return duck
     }
-  };
+  }
 
   return (
     <div className={`plan plan--${plan.template}`}>
@@ -100,7 +100,7 @@ const Plan = ({ plan }) => {
         <button className="plan__footer-button">{"Select >"}</button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Plan;
+export default Plan

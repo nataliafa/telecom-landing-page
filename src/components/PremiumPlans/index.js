@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import Plan from "../Plan";
-import { ThemeContext } from "../../ThemeProvider";
-import "./style.scss";
-import plans from "./plans.json";
+import React, { useContext } from "react"
+import Plan from "../Plan"
+import { ThemeContext } from "../../ThemeProvider"
+import "./style.scss"
+import plans from "./plans.json"
 
 const PremiumPlans = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext)
 
   return (
     <section className={`premium-plans premium-plans--${theme}`}>
@@ -26,7 +26,7 @@ const PremiumPlans = () => {
         ))}
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default PremiumPlans;
+export default PremiumPlans

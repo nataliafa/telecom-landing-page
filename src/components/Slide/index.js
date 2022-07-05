@@ -1,8 +1,8 @@
-import React from "react";
-import "./style.scss";
+import React from "react"
+import "./style.scss"
 
 const Slide = ({ slide, currentIndex }) => {
-  const { id, title, text, img } = slide;
+  const { id, title, text, img } = slide
   return (
     <section
       className={`slide ${id === currentIndex ? "slide--active" : ""}`}
@@ -15,7 +15,7 @@ const Slide = ({ slide, currentIndex }) => {
       <p className="slide__text" dangerouslySetInnerHTML={{ __html: text }} />
       <button className="slide__btn">Get started</button>
     </section>
-  );
-};
+  )
+}
 
-export default Slide;
+export default Slide

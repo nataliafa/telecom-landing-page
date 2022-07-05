@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import { ThemeContext } from "../../ThemeProvider";
-import "./style.scss";
+import React, { useContext } from "react"
+import { Link } from "react-router-dom"
+import { ThemeContext } from "../../ThemeProvider"
+import "./style.scss"
 
 const Nav = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext)
 
   return (
     <div className={`nav nav--${theme}`}>
@@ -30,7 +30,7 @@ const Nav = () => {
         Roaming
       </Link>
     </div>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav

@@ -1,8 +1,8 @@
-import React, { useReducer } from "react";
-import Slide from "../Slide";
-import "./style.scss";
-import imgSlide1 from "./img/slider_1.jpg";
-import imgSlide2 from "./img/slider_2.jpg";
+import React, { useReducer } from "react"
+import Slide from "../Slide"
+import "./style.scss"
+import imgSlide1 from "./img/slider_1.jpg"
+import imgSlide2 from "./img/slider_2.jpg"
 
 const slides = [
   {
@@ -17,13 +17,13 @@ const slides = [
     text: "Premium plans start from 40$ per month",
     img: imgSlide2,
   },
-];
+]
 
 const Slider = () => {
   const [state, dispatch] = useReducer(reducer, {
     currentIndex: 0,
     slides: slides,
-  });
+  })
 
   return (
     <div className="slider">
@@ -50,15 +50,15 @@ const Slider = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Slider;
+export default Slider
 
 const ACTIONS = {
   NEXT: "next",
   PREV: "prev",
-};
+}
 
 function reducer(state, action) {
   switch (action.type) {
@@ -69,7 +69,7 @@ function reducer(state, action) {
           state.currentIndex === state.slides.length - 1
             ? 0
             : state.currentIndex + 1,
-      };
+      }
     case ACTIONS.PREV:
       return {
         ...state,
@@ -77,8 +77,8 @@ function reducer(state, action) {
           state.currentIndex === 0
             ? state.slides.length - 1
             : state.currentIndex - 1,
-      };
+      }
     default:
-      return state;
+      return state
   }
 }

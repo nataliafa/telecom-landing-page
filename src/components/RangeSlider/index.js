@@ -1,35 +1,35 @@
-import React, { useCallback, useEffect, useState } from "react";
-import Slider, { Handle } from "rc-slider";
-import "./style.scss";
-import handle from "./img/handle.svg";
+import React, { useCallback, useEffect, useState } from "react"
+import Slider, { Handle } from "rc-slider"
+import "./style.scss"
+import handle from "./img/handle.svg"
 
 const CustomHandle = ({ value, dragging, index, ...props }) => {
   return (
     <Handle value={value} {...props}>
       <img src={handle} alt="Handle" />
     </Handle>
-  );
-};
+  )
+}
 
 const RangeSlider = ({ steps, defaultValue, onChange }) => {
-  const [marks, setMarks] = useState({});
+  const [marks, setMarks] = useState({})
 
   useEffect(() => {
-    const marks = {};
+    const marks = {}
     steps.forEach((element) => {
-      marks[element.toString()] = {};
-    });
-    setMarks(marks);
-  }, [steps]);
+      marks[element.toString()] = {}
+    })
+    setMarks(marks)
+  }, [steps])
 
   const customOnChange = useCallback(
     (value) => {
       if (onChange) {
-        onChange(steps.indexOf(value));
+        onChange(steps.indexOf(value))
       }
     },
     [steps, onChange]
-  );
+  )
 
   return (
     <div className="range-slider">
@@ -42,7 +42,7 @@ const RangeSlider = ({ steps, defaultValue, onChange }) => {
         onChange={customOnChange}
       />
     </div>
-  );
-};
+  )
+}
 
-export default RangeSlider;
+export default RangeSlider

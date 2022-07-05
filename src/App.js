@@ -1,24 +1,24 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useContext, useEffect } from "react";
-import { ThemeContext } from "./ThemeProvider";
-import Header from "./components/Header";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Services from "./pages/Services";
-import Plans from "./pages/Plans";
-import Numbers from "./pages/Numbers";
-import Organizations from "./pages/Organizations";
-import Roaming from "./pages/Roaming";
-import Profile from "./pages/Profile";
-import "./App.scss";
+import React from "react"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { useContext, useEffect } from "react"
+import { ThemeContext } from "./ThemeProvider"
+import Header from "./components/Header"
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Services from "./pages/Services"
+import Plans from "./pages/Plans"
+import Numbers from "./pages/Numbers"
+import Organizations from "./pages/Organizations"
+import Roaming from "./pages/Roaming"
+import Profile from "./pages/Profile"
+import "./App.scss"
 
 function App() {
-  const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext)
 
   useEffect(() => {
-    document.body.className = theme;
-  }, [theme]);
+    document.body.className = theme
+  }, [theme])
 
   return (
     <BrowserRouter>
@@ -36,7 +36,7 @@ function App() {
         </Routes>
       </div>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

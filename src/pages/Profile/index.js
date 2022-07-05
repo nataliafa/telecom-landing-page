@@ -1,6 +1,6 @@
-import React from "react";
-import Slider from "../../components/Slider";
-import StandardPlans from "../../components/StandardPlans";
+import React from "react"
+import Slider from "../../components/Slider"
+import StandardPlans from "../../components/StandardPlans"
 
 const Profile = () => {
   return (
@@ -8,7 +8,7 @@ const Profile = () => {
       <Slider />
       <StandardPlans />
     </>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile
