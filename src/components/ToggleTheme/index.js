@@ -13,24 +13,27 @@ const ToggleTheme = () => {
   useEffect(() => {
     const theme = localStorage.getItem(LOCAL_STORAGE_KEY)
     if (theme) {
+      onThemeChange(theme)
       setValue(theme)
     } else {
+      localStorage.setItem(LOCAL_STORAGE_KEY, VALUE_LIGHT)
+    }
+  }, [onThemeChange])
+
+  const handleChange = useCallback(
+    (event) => {
+      let value
+      if (event.target.checked) {
+        value = VALUE_DARK
+      } else {
+        value = VALUE_LIGHT
+      }
+      setValue(value)
+      onThemeChange(value)
       localStorage.setItem(LOCAL_STORAGE_KEY, value)
-    }
-  }, [value, onThemeChange])
-
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, value)
-    onThemeChange(value)
-  }, [value, onThemeChange])
-
-  const handleChange = useCallback(() => {
-    if (value === VALUE_LIGHT) {
-      setValue(VALUE_DARK)
-    } else if (value === VALUE_DARK) {
-      setValue(VALUE_LIGHT)
-    }
-  }, [value])
+    },
+    [onThemeChange]
+  )
 
   return (
     <div className="toggle-theme">
